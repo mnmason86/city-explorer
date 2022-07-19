@@ -13,17 +13,30 @@ An app that allows the user to view a map and the latitute & longitude by search
 JavaScript, React, Node.js, 
 
 ## Change Log
-Name of feature: Locations
+
+### Lab 06
+
+**Name of feature: Locations**
 
 Estimate of time needed to complete: 1 hour
 
 Start time: 8:30pm
 
-Finish time: _____
+Finish time: 11:00pm
 
-Actual time needed to complete: _____
+Actual time needed to complete:2.5 hours
+
+**Name of feature: Locations**
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 11:20pm
+
+Finish time: 
+
+Actual time needed to complete:
 
 ## Credit and Collaborations
-Lab 06: Whiteboard for WRRC (collab with Erin Ranta, TJ Parker)
+Lab 06: Whiteboard for WRRC (collab with Erin Ranta, TJ Parker), Charlie Fadness (TA) - help with API key
 
 ![Lab 06 Whiteboard](img/lab06wb.jpg)
