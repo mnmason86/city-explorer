@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+#search-input{
+  width: 60%;
+  margin: 1rem auto;
+  text-align: center;
+}
+#city-form{
+  background-color: rgba(243, 243, 148, 0.708);
+  padding: 2rem;
+  width: 30%;
+  margin: auto;
+}
+#city-display{
+  margin:3rem auto;
+  text-align: center;
+  height: 500px;
+  width: 30%;
+}
+
+#error-alert{
+  padding: 2rem;
+  width: 20%;
+  margin: 1rem auto;
+}
