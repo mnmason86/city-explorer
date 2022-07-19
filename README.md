@@ -13,11 +13,11 @@ An app that allows the user to view a map and the latitute & longitude by search
 JavaScript, React, Node.js, 
 
 ## Change Log
-Name of feature: 
+Name of feature: Locations
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1 hour
 
-Start time: _____
+Start time: 8:30pm
 
 Finish time: _____
 
