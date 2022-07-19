@@ -5,7 +5,9 @@ class Error extends Component{
 
   render(){
     return(
-      <Alert variant='danger'>Unable to Geocode</Alert>
+      <Alert id="error-alert" variant='danger'>
+        Error:  {this.props.error.message}
+      </Alert>
     )
   }
 }
