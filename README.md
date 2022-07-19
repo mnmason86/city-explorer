@@ -26,15 +26,25 @@ Finish time: 11:00pm
 
 Actual time needed to complete:2.5 hours
 
-**Name of feature: Locations**
+**Name of feature: Map**
 
 Estimate of time needed to complete: 1 hour
 
 Start time: 11:20pm
 
+Finish time: 12:30am
+
+Actual time needed to complete: 1 hour 10 minutes
+
+**Name of feature: Errors**
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 12:45am
+
 Finish time: 
 
-Actual time needed to complete:
+Actual time needed to complete: 
 
 ## Credit and Collaborations
 Lab 06: Whiteboard for WRRC (collab with Erin Ranta, TJ Parker), Charlie Fadness (TA) - help with API key

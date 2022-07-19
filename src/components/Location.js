@@ -1,6 +1,8 @@
 import {Component} from 'react';
+//import Error from './Error';
 import axios from 'axios';
 import Card from 'react-bootstrap/Card';
+
 const key = process.env.REACT_APP_CITY_KEY;
 
 
