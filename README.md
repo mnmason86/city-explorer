@@ -47,12 +47,22 @@ Finish time:
 Actual time needed to complete: 
 
 ## Credit and Collaborations
-Lab 06: Whiteboard for WRRC (collab with Erin Ranta, TJ Parker), Charlie Fadness (TA) - help with API key
+
+Jacob Knaack (Instructor) - demo code
+Charlie Fadness (TA) - help with API key
+Ben Mills (TA) - help with local server
 
 ### Lab 6 Whiteboard WRRC
+Collab with Erin Ranta, TJ Parker
 
 ![Lab 06 Whiteboard](img/lab06wb.jpg)
 
 ### Lab 7 Whiteboard WRRC
+Collab with Anthony Johnson
 
 ![Lab 07 Whiteboard](img/lab07wb.jpg)
+
+### Lab 8 Whiteboard WRRC
+Collab with Caelin Hargrave
+
+![Lab 08 Whiteboard](img/lab08wb.jpg)
