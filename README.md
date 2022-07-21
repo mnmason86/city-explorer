@@ -49,4 +49,10 @@ Actual time needed to complete:
 ## Credit and Collaborations
 Lab 06: Whiteboard for WRRC (collab with Erin Ranta, TJ Parker), Charlie Fadness (TA) - help with API key
 
+### Lab 6 Whiteboard WRRC
+
 ![Lab 06 Whiteboard](img/lab06wb.jpg)
+
+### Lab 7 Whiteboard WRRC
+
+![Lab 07 Whiteboard](img/lab07wb.jpg)

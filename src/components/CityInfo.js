@@ -13,7 +13,9 @@ class CityInfo extends Component {
           <Card.Text>Latitude: {this.props.lat}</Card.Text>
           <Card.Text>Longitude: {this.props.lon}</Card.Text>
           <Card.Img style={{width: '100%'}}src={`https://maps.locationiq.com/v3/staticmap?key=${apiKey}&center=${this.props.lat},${this.props.lon}&zoom=12&size=480x480`}/>
+          <Card.Body></Card.Body>
         </Card>
+       
     )    
   }
 }
