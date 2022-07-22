@@ -25,7 +25,7 @@ class Location extends Component {
  
   getLocation = (query) => {
     let url = `https://us1.locationiq.com/v1/search.php?key=${apiKey}&q=${query}&format=json`;
-
+    console.log(query);
     axios.get(url).then(response => {
 
         let data = response.data[0];
@@ -36,9 +36,10 @@ class Location extends Component {
           name: data.display_name,
           error: { status: null, message: null},
         });
-        if (response) {
-          this.getWeather(data.lat, data.lon, data.display_name);
-        };
+          this.getWeather(data.lat, data.lon, query);
+  
+          this.getMovies(query);
+        
       })
       .catch((error) => {
         if (error.response){
@@ -63,23 +64,22 @@ class Location extends Component {
     let response = await axios.get(url);
       this.setState({
         weather: response.data,
-      })
-      console.log(this.state);
+      }); 
       } catch (e) {
         this.setState({ error: e});
     }
   }
 
-  // send request to server for movie data
+ // send request to server for movie data
 
   getMovies = async (cityName) => {
     let url = `http://localhost:3001/movies?city_name=${cityName}`;
     
     try{
       let response = await axios.get(url);
+      console.log(response);
         this.setState({
-          movies: response.data.data,
-          
+          movies: response.data,
         });
         console.log(this.state.movies);
     } catch (e) {
@@ -94,6 +94,7 @@ class Location extends Component {
     }
 
   render(){
+    console.log(this.state.weather, this.state.movies);
     return (
       <>
         <Form onSubmit={this.handleSubmit} id="city-form">
@@ -104,7 +105,9 @@ class Location extends Component {
 
         {this.state.name && <CityInfo {...this.state}/>}
         {this.state.error.status && <Error id="city-error" {...this.state}></Error>}
+        
         <Weather {...this.state}/>
+       {/* // <Movies {...this.state}/> */}
       </>
     )
   }
