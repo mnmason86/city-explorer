@@ -113,6 +113,23 @@ Finish time: 1:00am
 
 Actual time needed to complete: 3.5 hours
 
+### Lab 9 Whiteboard WRRC
+Collab with Austin Limanek
+
+![Lab 09 Whiteboard](img/lab09wb.jpg)
+
+## Features
+
+**Name of feature: #1 - Componentize** 
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 11:40am
+
+Finish time: 12:10pm
+
+Actual time needed to complete: 30 minutes
+
 ## Credit and Collaborations
 
 Jacob Knaack  - demo code
