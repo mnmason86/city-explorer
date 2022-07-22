@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button'
 
 
 const apiKey = process.env.REACT_APP_CITY_KEY;
+//const herokuURL = process.env.HEROKU_URL;
 
 class Location extends Component {
   
