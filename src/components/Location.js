@@ -1,6 +1,7 @@
 import {Component} from 'react';
 import CityInfo from './CityInfo';
 import Weather from './Weather';
+import Movies from './Movies';
 import Error from './Error';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
@@ -18,27 +19,28 @@ class Location extends Component {
       lon: 0.00,
       name: '',
       weather: [],
+      movies:[],
       error: { status: null, message: null}
     }
-    console.log(this.state.weather);
   }
  
   getLocation = (query) => {
     let url = `https://us1.locationiq.com/v1/search.php?key=${apiKey}&q=${query}&format=json`;
-
+    console.log(query);
     axios.get(url).then(response => {
 
         let data = response.data[0];
-
+        
         this.setState({
           lat: data.lat,
           lon: data.lon,
           name: data.display_name,
           error: { status: null, message: null},
         });
-        if (response) {
-          this.getWeather(data.lat, data.lon, data.display_name);
-        };
+          this.getWeather(data.lat, data.lon, query);
+  
+          this.getMovies(query);
+        
       })
       .catch((error) => {
         if (error.response){
@@ -50,33 +52,50 @@ class Location extends Component {
       
 
       //send request to get weather values
-    getWeather = async (lat,lon,name) => {
-      let queryName = [];
-      let targetComma = name.indexOf(',',0);
-      let char = name.slice(0,targetComma);
-      queryName.push(char);
+  getWeather = async (lat,lon,name) => {
+    let queryName = [];
+    let targetComma = name.indexOf(',',0);
+    let char = name.slice(0,targetComma);
+    queryName.push(char);
 
-      let url = `http://localhost:3001/weather?lat=${lat}&lon=${lon}&searchQuery=${queryName}`;
+    let url = `http://localhost:3001/weather?lat=${lat}&lon=${lon}&searchQuery=${queryName}`;
 
-      try {
+    try {
 
-        let response = await axios.get(url);
-        this.setState({
-          weather: response.data,
-        })
-        console.log(response.data);
+    let response = await axios.get(url);
+      this.setState({
+        weather: response.data,
+      }); 
       } catch (e) {
         this.setState({ error: e});
     }
-
   }
-  
+
+ // send request to server for movie data
+
+  getMovies = async (cityName) => {
+    let url = `http://localhost:3001/movies?city_name=${cityName}`;
+    
+    try{
+      let response = await axios.get(url);
+      console.log(response);
+        this.setState({
+          movies: response.data,
+        });
+        console.log(this.state.movies);
+    } catch (e) {
+        this.setState({ error: e});
+    } 
+  }
+
+
     handleSubmit = (e) => {
       e.preventDefault();
       this.getLocation(e.target.city.value);
     }
 
   render(){
+    console.log(this.state);
     return (
       <>
         <Form onSubmit={this.handleSubmit} id="city-form">
@@ -87,7 +106,9 @@ class Location extends Component {
 
         {this.state.name && <CityInfo {...this.state}/>}
         {this.state.error.status && <Error id="city-error" {...this.state}></Error>}
-        <Weather {...this.state}/>
+        
+        {this.state.name && <Weather {...this.state}/>}
+        {this.state.name && <Movies {...this.state}/>}
       </>
     )
   }

@@ -1,14 +1,13 @@
 import {Component} from 'react';
-import { ListGroup } from 'react-bootstrap';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 class Weather extends Component { 
 
   render() {
     
-    
     return (
       <ListGroup numbered>
-        <h3>3 Day Forecast: </h3>
+        <ListGroupItem id="forecast-title">3 Day Forecast</ListGroupItem>
         {this.props.weather.map (day => 
           <ListGroup.Item key={day.date}>
             <p>Date: {day.date}</p>

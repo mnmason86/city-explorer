@@ -60,3 +60,15 @@
   width: 20%;
   margin: 1rem auto;
 }
+#forecast-title{
+  font-size: 24px;
+  background-color: rgba(0, 191, 255, 0.557);
+}
+#movie-card{
+  margin: 1rem;
+}
+
+#movies-title{
+  font-size: 24px;
+  background-color: rgba(0, 191, 255, 0.557);
+}
