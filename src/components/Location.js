@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button'
 
 
 const apiKey = process.env.REACT_APP_CITY_KEY;
-//const herokuURL = process.env.HEROKU_URL;
+const herokuURL = process.env.REACT_APP_HEROKU_URL;
 
 class Location extends Component {
   
@@ -27,7 +27,6 @@ class Location extends Component {
  
   getLocation = (query) => {
     let url = `https://us1.locationiq.com/v1/search.php?key=${apiKey}&q=${query}&format=json`;
-    console.log(query);
     axios.get(url).then(response => {
 
         let data = response.data[0];
@@ -53,13 +52,14 @@ class Location extends Component {
       
 
       //send request to get weather values
+
   getWeather = async (lat,lon,name) => {
     let queryName = [];
     let targetComma = name.indexOf(',',0);
     let char = name.slice(0,targetComma);
     queryName.push(char);
 
-    let url = `http://localhost:3001/weather?lat=${lat}&lon=${lon}&searchQuery=${queryName}`;
+    let url = `${herokuURL}/weather?lat=${lat}&lon=${lon}&searchQuery=${queryName}`;
 
     try {
 
@@ -75,15 +75,13 @@ class Location extends Component {
  // send request to server for movie data
 
   getMovies = async (cityName) => {
-    let url = `http://localhost:3001/movies?city_name=${cityName}`;
+    let url = `${herokuURL}/movies?city_name=${cityName}`;
     
     try{
       let response = await axios.get(url);
-      console.log(response);
         this.setState({
           movies: response.data,
         });
-        console.log(this.state.movies);
     } catch (e) {
         this.setState({ error: e});
     } 
@@ -96,7 +94,6 @@ class Location extends Component {
     }
 
   render(){
-    console.log(this.state);
     return (
       <>
         <Form onSubmit={this.handleSubmit} id="city-form">
