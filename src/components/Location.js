@@ -1,6 +1,7 @@
 import {Component} from 'react';
 import CityInfo from './CityInfo';
 import Weather from './Weather';
+import Movies from './Movies';
 import Error from './Error';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
@@ -94,7 +95,7 @@ class Location extends Component {
     }
 
   render(){
-    console.log(this.state.weather, this.state.movies);
+    console.log(this.state);
     return (
       <>
         <Form onSubmit={this.handleSubmit} id="city-form">
@@ -106,8 +107,8 @@ class Location extends Component {
         {this.state.name && <CityInfo {...this.state}/>}
         {this.state.error.status && <Error id="city-error" {...this.state}></Error>}
         
-        <Weather {...this.state}/>
-       {/* // <Movies {...this.state}/> */}
+        {this.state.name && <Weather {...this.state}/>}
+        {this.state.name && <Movies {...this.state}/>}
       </>
     )
   }
