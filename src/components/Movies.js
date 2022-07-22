@@ -3,7 +3,7 @@ import {Card} from 'react-bootstrap';
 import {ListGroupItem} from 'react-bootstrap';
 import {Row} from 'react-bootstrap';
 
-let urlRoot = '';
+
 
 class Movies extends Component {
 
