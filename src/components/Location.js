@@ -18,9 +18,9 @@ class Location extends Component {
       lon: 0.00,
       name: '',
       weather: [],
+      movies:[],
       error: { status: null, message: null}
     }
-    console.log(this.state.weather);
   }
  
   getLocation = (query) => {
@@ -29,7 +29,7 @@ class Location extends Component {
     axios.get(url).then(response => {
 
         let data = response.data[0];
-
+        
         this.setState({
           lat: data.lat,
           lon: data.lon,
@@ -50,27 +50,44 @@ class Location extends Component {
       
 
       //send request to get weather values
-    getWeather = async (lat,lon,name) => {
-      let queryName = [];
-      let targetComma = name.indexOf(',',0);
-      let char = name.slice(0,targetComma);
-      queryName.push(char);
+  getWeather = async (lat,lon,name) => {
+    let queryName = [];
+    let targetComma = name.indexOf(',',0);
+    let char = name.slice(0,targetComma);
+    queryName.push(char);
 
-      let url = `http://localhost:3001/weather?lat=${lat}&lon=${lon}&searchQuery=${queryName}`;
+    let url = `http://localhost:3001/weather?lat=${lat}&lon=${lon}&searchQuery=${queryName}`;
 
-      try {
+    try {
 
-        let response = await axios.get(url);
-        this.setState({
-          weather: response.data,
-        })
-        console.log(response.data);
+    let response = await axios.get(url);
+      this.setState({
+        weather: response.data,
+      })
+      console.log(this.state);
       } catch (e) {
         this.setState({ error: e});
     }
-
   }
-  
+
+  // send request to server for movie data
+
+  getMovies = async (cityName) => {
+    let url = `http://localhost:3001/movies?city_name=${cityName}`;
+    
+    try{
+      let response = await axios.get(url);
+        this.setState({
+          movies: response.data.data,
+          
+        });
+        console.log(this.state.movies);
+    } catch (e) {
+        this.setState({ error: e});
+    } 
+  }
+
+
     handleSubmit = (e) => {
       e.preventDefault();
       this.getLocation(e.target.city.value);
