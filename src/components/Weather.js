@@ -4,8 +4,6 @@ import WeatherDay from "./WeatherDay";
 
 class Weather extends Component { 
 
-  
-
   render() {
     
     return (

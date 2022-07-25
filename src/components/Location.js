@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button'
 
 
 const apiKey = process.env.REACT_APP_CITY_KEY;
-const herokuURL = process.env.REACT_APP_HEROKU_URL;
+//const herokuURL = process.env.REACT_APP_HEROKU_URL;
 
 class Location extends Component {
   
@@ -53,16 +53,12 @@ class Location extends Component {
 
       //send request to get weather values
 
-  getWeather = async (lat,lon,name) => {
-    let queryName = [];
-    let targetComma = name.indexOf(',',0);
-    let char = name.slice(0,targetComma);
-    queryName.push(char);
-
-    let url = `${herokuURL}/weather?lat=${lat}&lon=${lon}&searchQuery=${queryName}`;
-
+  getWeather = async (lat,lon,cityName) => {
+    
+    let url = `http://localhost:3001/weather?lat=${lat}&lon=${lon}&searchQuery=${cityName}`;
+    
     try {
-
+      
     let response = await axios.get(url);
       this.setState({
         weather: response.data,
@@ -75,7 +71,7 @@ class Location extends Component {
  // send request to server for movie data
 
   getMovies = async (cityName) => {
-    let url = `${herokuURL}/movies?city_name=${cityName}`;
+    let url = `http://localhost:3001/movies?city_name=${cityName}`;
     
     try{
       let response = await axios.get(url);
