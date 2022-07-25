@@ -130,12 +130,30 @@ Finish time: 12:10pm
 
 Actual time needed to complete: 30 minutes
 
+### Lab 10 Whiteboard WRRC
+Collab with Hayden Cleaver
+
+![Lab 10 Whiteboard](img/lab10wb.jpg)
+
+## Features
+
+**Name of feature: #1 - Cache** 
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 4:45pm (paused at 6:30pm, resume at 10:30am next day)
+
+Finish time: 12:00pm
+
+Actual time needed to complete: 3 hours 15 minutes
+
 ## Credit and Collaborations
 
 Jacob Knaack  - demo code
 Charlie Fadness - help with API key
 Ben Mills - help with local server
-Kassie Bradshaw & Tammy Do - help connecting APIs to server
+Kassie Bradshaw,Tammy Do - help connecting APIs to server
+Justin Hammerly - help with Heroku/Netlify
 
 
 
